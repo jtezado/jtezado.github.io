@@ -1,54 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Example Page</title>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="This is an example page for demonstration purposes."
+      content="Jane Doe's portfolio showcasing her projects and skills in web development."
     />
-    <meta name="keywords" content="jick, tezado" />
-    <meta name="author" content="Jick S. Tezado" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Jane Doe | Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header>
-      <h1>Example Page</h1>
       <nav>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
+      <h1>Jane Doe</h1>
+      <h2>Web Developer</h2>
     </header>
     <main>
-      <h2>Welcome to our Example Page</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus
-        felis a elit sagittis, vitae commodo sapien faucibus. Sed quis
-        vestibulum orci. Aenean molestie tortor augue, in euismod ipsum eleifend
-        sed. Fusce rhoncus mauris sed lectus molestie dictum. Nulla ut aliquet
-        lorem, ac elementum nisl. Donec sed justo sit amet ex sodales bibendum.
-        Fusce tincidunt ligula elit, in malesuada nulla lacinia vel. Fusce eu
-        blandit nisl, a gravida nisi.
-      </p>
-      <p>
-        Phasellus pharetra ligula ut tellus luctus, id auctor nisi bibendum.
-        Duis interdum blandit lacus, nec volutpat sapien hendrerit vel.
-        Curabitur hendrerit volutpat mauris, non pharetra purus consequat a. In
-        at consequat arcu. Sed vel augue quis velit eleifend dictum quis ut
-        lacus. Sed tristique mi a magna dapibus, sed efficitur urna
-        pellentesque. Ut lacinia justo a euismod pharetra. Suspendisse ornare id
-        justo id mollis. Integer eu odio a felis fringilla vestibulum sed vel
-        purus. Nullam ac enim lorem. Nulla facilisi.
-      </p>
-      <a href="#" class="button">Learn More</a>
+      <section id="about">
+        <h3>About Me</h3>
+        <p>
+          I am a web developer with 3 years of experience in creating responsive
+          and user-friendly websites. My skills include HTML, CSS, JavaScript,
+          and React.
+        </p>
+      </section>
+      <section id="projects">
+        <h3>Projects</h3>
+        <div class="project">
+          <h4>Project 1</h4>
+          <p>
+            A responsive website for a local restaurant, built with HTML, CSS,
+            and JavaScript.
+          </p>
+          <a href="#">View project</a>
+        </div>
+        <div class="project">
+          <h4>Project 2</h4>
+          <p>
+            A portfolio website for a photographer, built with React and CSS.
+          </p>
+          <a href="#">View project</a>
+        </div>
+      </section>
+      <section id="contact">
+        <h3>Contact Me</h3>
+        <form>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required></textarea>
+          <input type="submit" value="Send" />
+        </form>
+      </section>
     </main>
     <footer>
-      <p>Copyright © 2022 Example Page</p>
+      <p>&copy; Jane Doe 2023</p>
     </footer>
   </body>
 </html>
