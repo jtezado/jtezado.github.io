@@ -8,8 +8,7 @@
       content="Jick Tezado's portfolio showcasing his projects and skills in web development."
     />
     <title>Jick Tezado | Portfolio</title>
-    <link rel="stylesheet" href="styles.css" />
-
+    <link rel="stylesheet" href="styles/css/index.min.css" />
     <link rel="icon" href="images/jt logo/favicon.ico" type="image/x-icon" />
     <link
       rel="shortcut icon"
@@ -18,17 +17,25 @@
     />
   </head>
   <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-      <h1>Jick Tezado</h1>
-      <h2>Web Developer</h2>
-    </header>
+    <div class="header-holder">
+      <div class="navigator-holder">
+        <nav class="navigator">
+          <div class="imageholder">
+            <img
+              class="logo-image"
+              src="images/jt logo/android-chrome-192x192.png"
+              alt="image description"
+            />
+          </div>
+          <ul class="nav-list">
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#projects">PROJECT</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header-info"></div>
+    </div>
     <main>
       <section id="about">
         <h3>< About Me ></h3>
@@ -58,15 +65,6 @@
       </section>
       <section id="contact">
         <h3>Contact Me</h3>
-        <form>
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required />
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required />
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" required></textarea>
-          <input type="submit" value="Send" />
-        </form>
       </section>
     </main>
     <footer>
