@@ -1,0 +1,23 @@
+.humburger,
+.humburger::before,
+.humburger::after {
+  width: 2em;
+  height: 3px;
+  background: black;
+  transition: transform 250ms ease-in-out;
+}
+
+.humburger::before,
+.humburger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.humburger::before {
+  bottom: 6px;
+}
+
+.humburger::after {
+  top: 6px;
+}

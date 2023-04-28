@@ -1,0 +1,31 @@
+@import "variables";
+@import "mixins";
+
+#scroll-top-btn {
+  @include flexCenter;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 3;
+  background-image: linear-gradient(to top, $secondary-color, $tertiary-color);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  transition: opacity 0.5s ease-in-out;
+
+  i {
+    color: white;
+    font-weight: bolder;
+  }
+
+  &:hover {
+    scale: 1.08;
+  }
+}
+
+.hidden {
+  opacity: 0;
+}

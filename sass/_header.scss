@@ -1,3 +1,115 @@
+@import "mixins";
+@import "variables";
+
 .header-holder {
-  height: 100vh;
+  @include flexCenter;
+  width: 100%;
+  height: 75vh;
+
+  .header-author {
+    @include flexCenter;
+    flex-direction: row;
+    height: 70%;
+    width: 650px;
+    border-radius: 20px 10px 10px 20px;
+    border: 6px solid $secondary-color;
+    padding-right: 20px;
+
+    .author-image {
+      @include flexCenter;
+      height: 100%;
+      width: 30%;
+
+      img {
+        position: relative;
+        left: -95px;
+        height: 300px;
+        border-radius: 50%;
+        background-clip: padding-box;
+        border: 10px solid $secondary-color;
+
+        &:hover {
+          scale: 1.01;
+        }
+      }
+    }
+
+    .author-description {
+      @include flexCenter;
+      flex-direction: column;
+      height: 100%;
+      width: 70%;
+
+      .p-hello {
+        width: 100%;
+        color: gray;
+        font-family: "Roboto", sans-serif;
+        font-size: small;
+        letter-spacing: 3px;
+        padding-bottom: 0;
+      }
+
+      h1 {
+        width: 100%;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        font-weight: bolder;
+        font-size: 4rem;
+        letter-spacing: 5px;
+        margin: 0;
+        padding-bottom: 0;
+        color: rgb(23, 23, 23);
+      }
+
+      .p-position {
+        width: 100%;
+        font-family: "Roboto", sans-serif;
+        font-size: large;
+        letter-spacing: 2px;
+        color: black;
+        padding-top: 0;
+        margin-top: 0;
+      }
+
+      .p-description {
+        text-align: justify;
+        text-align-last: justify;
+        text-justify: distribute-all-lines;
+        width: 100%;
+        font-family: "Roboto", sans-serif;
+        font-size: large;
+        line-height: 1.5;
+        color: $tertiary-color;
+        margin-top: 0;
+        padding-top: 0;
+      }
+
+      .socialmedia {
+        padding-top: 20px;
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        width: 100%;
+        height: 50px;
+
+        .fb-logo,
+        .insta-logo,
+        .twitter-logo {
+          @include flexCenter;
+          height: 100%;
+          text-decoration: none;
+          i {
+            font-size: 40px;
+            color: $tertiary-color;
+
+            &:hover {
+              position: relative;
+              top: -3px;
+              color: $secondary-color;
+            }
+          }
+        }
+      }
+    }
+  }
 }

@@ -8,6 +8,13 @@
       content="Jick Tezado's portfolio showcasing his projects and skills in web development."
     />
     <title>Jick Tezado | Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="styles/css/index.min.css" />
     <link rel="icon" href="images/jt logo/favicon.ico" type="image/x-icon" />
     <link
@@ -15,30 +22,70 @@
       href="images/jt logo/favicon.ico"
       type="image/x-icon"
     />
+    <script src="js/scroll-up-button.js"></script>
   </head>
   <body>
-    <div class="header-holder">
-      <div class="navigator-holder">
-        <nav class="navigator">
-          <div class="imageholder">
-            <img
-              class="logo-image"
-              src="images/jt logo/android-chrome-192x192.png"
-              alt="image description"
-            />
-          </div>
-          <ul class="nav-list">
-            <li><a href="#about">ABOUT</a></li>
-            <li><a href="#projects">PROJECT</a></li>
-            <li><a href="#contact">CONTACT</a></li>
-          </ul>
-        </nav>
-      </div>
-      <div class="header-info"></div>
+    <div id="scroll-top-btn" class="hidden" onclick="scrollToTop()">
+      <i class="fa-solid fa-chevron-up"></i>
     </div>
-    <main>
+
+    <div class="navigator-holder">
+      <nav class="navigator">
+        <div class="imageholder">
+          <div class="logo-text">JT</div>
+        </div>
+        <ul class="nav-list">
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#projects">PROJECTS</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="content">
+      <div class="header-holder">
+        <div class="header-author">
+          <div class="author-image">
+            <img src="images/jick-image.jpg" alt="Jick Tezado's Image" />
+          </div>
+          <div class="author-description">
+            <p class="p-hello">HELLO EVERYBODY, I AM</p>
+            <h1>Jick Tezado</h1>
+            <p class="p-position">JUNIOR DEVELOPER</p>
+            <p class="p-description">
+              Experienced developer with 6+ years of expertise in developing
+              efficient and user-friendly web and desktop applications. Explore
+              my portfolio to see some of my top projects and learn more about
+              my skills and experience.
+            </p>
+            <div class="socialmedia">
+              <a
+                class="fb-logo"
+                href="https://www.facebook.com/jtezado"
+                target="_blank"
+                alt="instagram profile"
+                ><i class="fa-brands fa-facebook"></i>
+              </a>
+              <a
+                class="insta-logo"
+                href="https://www.instagram.com/gkplugin/"
+                target="_blank"
+                alt="instagram profile"
+                ><i class="fa-brands fa-square-instagram"></i>
+              </a>
+              <a
+                class="twitter-logo"
+                href="https://twitter.com/gkplugin"
+                target="_blank"
+                alt="instagram profile"
+                ><i class="fa-brands fa-twitter"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
       <section id="about">
-        <h3>< About Me ></h3>
+        <h3>About Me</h3>
         <p>
           I am a web developer with 3 years of experience in creating responsive
           and user-friendly websites. My skills include HTML, CSS, JavaScript,
@@ -66,9 +113,28 @@
       <section id="contact">
         <h3>Contact Me</h3>
       </section>
-    </main>
+    </div>
     <footer>
       <p>&copy; Jick Tezado 2023</p>
     </footer>
+
+    <script>
+      const scrollTopBtn = document.querySelector("#scroll-top-btn");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 100) {
+          scrollTopBtn.classList.remove("hidden");
+        } else {
+          scrollTopBtn.classList.add("hidden");
+        }
+      });
+
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }
+    </script>
   </body>
 </html>
