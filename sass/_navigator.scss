@@ -1,82 +1,44 @@
-@import "mixins";
-@import "fonts";
 @import "variables";
+@import "mixins";
 
-.navigator-holder {
-  @include flexCenter;
-  background-color: $secondary-color;
+.navigator {
+  background-color: transparent;
   position: fixed;
-  top: 0px;
+  bottom: 20px;
   height: 85px;
   width: 100%;
   z-index: 2;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-  .navigator {
-    width: 100%;
+
+  .nav-list {
+    @include flexCenter;
+    flex-direction: row;
+    gap: 50px;
     height: 100%;
-    display: flex;
-    align-items: center;
 
-    .imageholder {
-      @include flexCenter;
-      width: 150px;
-      height: 100%;
-      margin-left: 100px;
+    .nav-item {
+      width: 50px;
+      height: 50px;
+      background-image: linear-gradient(
+        to top,
+        $tertiary-color,
+        $secondary-color
+      );
+      border-radius: 50%;
 
-      .logo-text {
+      a {
         @include flexCenter;
-        font-family: "Rubik Glitch";
-        font-size: 70px;
-        min-width: 150px;
-        letter-spacing: 10px;
+        font-size: 20px;
+        color: $primary-color;
+        width: 100%;
         height: 100%;
-        animation: animate-gradient 1s ease infinite;
-        background-image: linear-gradient(to top, #ffffff, #4a42f1);
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
+        text-decoration: none;
       }
-    }
 
-    .nav-list {
-      position: relative;
-      display: flex;
-      width: 100%;
-      height: 100%;
-      justify-content: flex-end;
-      margin-right: 50px;
-      li {
-        @include flexCenter;
-        list-style: none;
-        width: 150px;
-
-        a {
-          @include flexCenter;
-          font-size: small;
-          font-family: "Roboto";
-          letter-spacing: 4px;
-          text-decoration: none;
-          color: white;
-          transform: scale(1);
-          transition: transform 0.3s ease-in-out;
-
-          &::before {
-            content: "";
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -10px;
-            left: 0;
-            background-color: #ffffff;
-            visibility: visible;
-            transition: all 0.3s ease-in-out;
-          }
-
-          &:hover::before {
-            visibility: visible;
-            width: 100%;
-          }
-        }
+      &:hover {
+        position: relative;
+        top: -2px;
+        scale: (1.02);
+        cursor: pointer;
       }
     }
   }

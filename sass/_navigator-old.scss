@@ -1,0 +1,84 @@
+@import "mixins";
+@import "fonts";
+@import "variables";
+
+.navigator-holder {
+  @include flexCenter;
+  background-color: $primary-color;
+  position: fixed;
+  top: 0px;
+  height: 85px;
+  width: 100%;
+  z-index: 2;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 4px;
+
+  .navigator {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    .imageholder {
+      @include flexCenter;
+      width: 150px;
+      height: 100%;
+      margin-left: 100px;
+
+      .logo-text {
+        @include flexCenter;
+        font-family: "Rubik Glitch", cursive;
+        font-size: 70px;
+        min-width: 150px;
+        letter-spacing: 10px;
+        height: 100%;
+        color: $secondary-color;
+      }
+    }
+
+    .nav-list {
+      position: relative;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      justify-content: flex-end;
+      margin-right: 50px;
+      li {
+        @include flexCenter;
+        list-style: none;
+        width: 150px;
+
+        a {
+          @include flexCenter;
+          font-size: small;
+          font-family: "Roboto";
+          letter-spacing: 4px;
+          text-decoration: none;
+          color: $secondary-color;
+          transform: scale(1);
+          transition: transform 0.3s ease-in-out;
+
+          &::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -10px;
+            left: 0;
+            background-color: $secondary-color;
+            visibility: visible;
+            transition: all 0.3s ease-in-out;
+          }
+
+          &:hover::before {
+            visibility: visible;
+            width: 100%;
+          }
+
+          i {
+            font-size: 50px;
+          }
+        }
+      }
+    }
+  }
+}

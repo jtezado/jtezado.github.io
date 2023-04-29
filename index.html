@@ -29,21 +29,21 @@
       <i class="fa-solid fa-chevron-up"></i>
     </div>
 
-    <div class="navigator-holder">
-      <nav class="navigator">
-        <div class="imageholder">
-          <div class="logo-text">JT</div>
+    <div class="navigator">
+      <div class="nav-list">
+        <div class="nav-item">
+          <a class="fa-solid fa-house" href="#home"></a>
         </div>
-        <ul class="nav-list">
-          <li><a href="#about">ABOUT</a></li>
-          <li><a href="#projects">PROJECTS</a></li>
-          <li><a href="#contact">CONTACT</a></li>
-        </ul>
-      </nav>
+        <div class="nav-item">
+          <a class="fa-solid fa-hammer" href="#skills"></a>
+        </div>
+        <div class="nav-item">
+          <a class="fa-solid fa-calendar-check" href="#projects"></a>
+        </div>
+      </div>
     </div>
-
-    <div class="content">
-      <div class="header-holder">
+    <div class="container">
+      <section id="home">
         <div class="header-author">
           <div class="author-image">
             <img src="images/jick-image.jpg" alt="Jick Tezado's Image" />
@@ -83,46 +83,34 @@
             </div>
           </div>
         </div>
-      </div>
-      <section id="about">
-        <h3>About Me</h3>
-        <p>
-          I am a web developer with 3 years of experience in creating responsive
-          and user-friendly websites. My skills include HTML, CSS, JavaScript,
-          and React.
-        </p>
+      </section>
+      <section id="skills">
+        <div class="skill-holder">
+          <h3 class="hidden-ani">Expertise</h3>
+          <div class="skill-details">
+            <div class="skill-item fa-brands fa-java"></div>
+            <div class="skill-item fa-brands fa-js"></div>
+            <div class="skill-item fa-brands fa-php"></div>
+            <div class="skill-item fa-brands fa-html5"></div>
+            <div class="skill-item fa-brands fa-css3"></div>
+            <div class="skill-item fa-brands fa-sass"></div>
+          </div>
+        </div>
       </section>
       <section id="projects">
-        <h3>Projects</h3>
-        <div class="project">
-          <h4>Project 1</h4>
-          <p>
-            A responsive website for a local restaurant, built with HTML, CSS,
-            and JavaScript.
-          </p>
-          <a href="#">View project</a>
+        <div class="projects-holder">
+          <h3 class="hidden-ani">Projects</h3>
+          <div class="projects-details">
+            <p>Projects</p>
+          </div>
         </div>
-        <div class="project">
-          <h4>Project 2</h4>
-          <p>
-            A portfolio website for a photographer, built with React and CSS.
-          </p>
-          <a href="#">View project</a>
-        </div>
-      </section>
-      <section id="contact">
-        <h3>Contact Me</h3>
       </section>
     </div>
-    <footer>
-      <p>&copy; Jick Tezado 2023</p>
-    </footer>
-
     <script>
       const scrollTopBtn = document.querySelector("#scroll-top-btn");
-
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 100) {
+      const containerScroll = document.querySelector(".container");
+      containerScroll.addEventListener("scroll", () => {
+        if (containerScroll.scrollTop > 100) {
           scrollTopBtn.classList.remove("hidden");
         } else {
           scrollTopBtn.classList.add("hidden");
@@ -130,11 +118,24 @@
       });
 
       function scrollToTop() {
-        window.scrollTo({
+        containerScroll.scrollTo({
           top: 0,
           behavior: "smooth",
         });
       }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show-ani");
+          } else {
+            entry.target.classList.remove("show-ani");
+          }
+        });
+      });
+
+      const hiddenElements = document.querySelectorAll(".hidden-ani");
+      hiddenElements.forEach((el) => observer.observe(el));
     </script>
   </body>
 </html>
